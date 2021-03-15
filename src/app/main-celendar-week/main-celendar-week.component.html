@@ -1,0 +1,29 @@
+<div class="main-content">
+    <table>
+        <tr>
+            <td *ngFor='let name of nameOfWeek' class="empty weekDay">
+                {{name.day}}
+            </td>
+        </tr>
+
+        <tr>
+            <td *ngFor='let date of dataArray[curentWeek]' 
+            [class.notEmpty]='date.day !== -1 && date.day'>
+                 <div *ngIf='date.day!==-1' class="ceil" (click)='clickDate($event, date)'>
+                    <span>{{date.day !== -1 ? date.day : ''}}</span>
+
+                    <div *ngIf='events[getDate(date)]'>
+                        <app-event-item *ngFor='let d of events[getDate(date)]' [content]='d'></app-event-item>
+                    </div>
+                    <div class='show-more' *ngIf='events[getDate(date)]?.length > 3' (click)='openModalAllEvents($event, events[getDate(date)])'>
+                        ^^^^^
+                    </div>
+                    
+                </div>
+            </td> 
+         </tr>
+    </table>
+</div>
+<app-modal-all-events *ngIf='showModalAllEvents' [events]='eventsForModalAdd' (closeModalAllEvents)='closeModalAllEvents()'>
+</app-modal-all-events>
+<app-modal-add *ngIf='showModal' [date]='date' (closeModal)='closeModal()'></app-modal-add>

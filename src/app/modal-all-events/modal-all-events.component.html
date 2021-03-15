@@ -1,0 +1,6 @@
+<div class='modal-all-events'>
+    <div class='modal-all-events-window'>
+        <app-event-item *ngFor='let content of events' [content]='content'></app-event-item>
+    <button (click)='onClose($event)'>Закрыть</button>
+    </div>
+</div>

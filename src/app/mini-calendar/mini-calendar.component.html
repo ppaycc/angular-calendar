@@ -1,0 +1,25 @@
+<div class="mini-calendar">
+    <div class="mini-calendar-header">
+        <p>{{year}} {{nameOfMonth}}</p>
+        <div class="buttons">
+            <button (click)="toPrevMonth()"><</button>
+            <button (click)="toNextMonth()">></button>
+        </div>
+    </div>
+    <table>
+        <tr>
+           <td *ngFor='let dayOfWeek of nameOfWeek'>
+                {{dayOfWeek.day}}
+           </td> 
+        </tr>
+        <tr *ngFor='let week of dateArray'>
+            <td *ngFor='let date of week' (click)='clickAtData(date)' 
+            [class.notEmpty]='date.day !== -1 && date.day'
+            [class.today]='isToday(date.fullDate)'>
+                 {{date.day !== -1 ? date.day : ''}}
+            </td> 
+         </tr>
+    </table>
+</div>
+
+<app-modal-add *ngIf='showModal' [date]='date' (closeModal)='closeModal()'></app-modal-add>

@@ -1,0 +1,20 @@
+<header>
+    <div class="date">
+        <p>
+            {{year}} {{nameOfMounth}} 
+        </p>
+        <div class="buttons">
+            <button (click)='prev()'><</button>
+            <button (click)='next()'>></button>
+        </div>
+    </div>
+    <div>
+        {{type}}
+        <nav>
+            <select (change)='navigateTo($event.target.value)' value='type'>
+                <option value='mounth'>Месяц</option>
+                <option value='week'>Неделя</option>
+            </select>
+        </nav>
+    </div>
+</header>

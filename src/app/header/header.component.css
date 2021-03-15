@@ -1,0 +1,30 @@
+header{
+    height: 50px;
+    border-bottom: 2px solid #ccc;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+}
+header .date{
+    min-width: 220px;
+    max-width: 300px;
+    display: flex;
+    justify-content: space-between;
+}
+header .date p{
+    margin-top: 5px;
+    font-size: 20px;
+}
+header .date .buttons button {
+    padding: 5px 10px;
+    border-radius: 100px;
+    border: 1px solid #ccc;
+    margin-left: 5px;
+    cursor: pointer;
+}
+select{
+    padding: 3px 5px;
+}
+select option {
+}

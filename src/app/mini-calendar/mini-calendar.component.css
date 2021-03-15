@@ -1,0 +1,54 @@
+.mini-calendar-header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px;
+    border: 2px solid #ccc;
+    border-bottom: none;
+}
+.mini-calendar-header p{
+    font-size: 18px;
+    display: inline-block;
+}
+.mini-calendar-header .buttons{
+    display: inline-block;
+    /* width: auto; */
+}
+.mini-calendar-header .buttons button{
+    padding: 5px 10px;
+    border-radius: 100px;
+    border: 1px solid #ccc;
+    margin-left: 5px;
+    cursor: pointer;
+    /* text-align: center; */
+}
+
+
+.mini-calendar{
+    width: 200px;
+    margin: 10px;
+    display: inline-block;
+}
+.mini-calendar table{
+    border: 2px solid #ccc;
+    border-radius: 0 0 10px 10px;
+    /* padding: 2px; */
+}
+.mini-calendar table td{
+    padding: 0;
+    margin: 0;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    transition: .3s;
+    font-size: 14px;
+}
+.mini-calendar table td.notEmpty:hover{
+    background: #ccc;
+    border-radius: 100px;
+    cursor: pointer;
+}
+.mini-calendar table td.notEmpty.today{
+    background: #ccc;
+    border-radius: 100px;
+}

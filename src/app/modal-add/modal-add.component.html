@@ -1,0 +1,10 @@
+<div class='modal-add'>
+    <div class='modal-add-window'>
+        <p>Добавить событие на: {{getDate()}}</p>
+        <textarea [value]='value' (change)='onChange($event)' placeholder='Введите событие здесь...'></textarea>
+        <div class="buttons">
+            <button (click)='onCancel()'>Отменить</button>
+            <button (click)='onAdd()'>Добавить</button>
+        </div>
+    </div>
+</div>

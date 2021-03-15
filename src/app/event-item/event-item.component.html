@@ -1,0 +1,15 @@
+<div class='event-item' (click)='onEdit($event)' [style.background]="bg">
+    <div class="garbage" (click)='onDelete($event)'></div>
+    <p>{{content.value}}</p>
+</div>
+
+<div *ngIf='showEditModal' class='event-item-modal-edit' (click)='$event.stopPropagation()'>
+    <div class='event-item-modal-edit-window'>
+        <p>Редактировать событие на ... </p>
+        <textarea [value]='value' (change)='onChange($event)' placeholder='Введите событие здесь...'></textarea>
+        <div class="buttons">
+            <button (click)='cancel($event)'>Отменить</button>
+            <button (click)='onSaveEdit($event)'>Редактировать</button>
+        </div>
+    </div>
+</div>
