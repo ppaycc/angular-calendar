@@ -1,6 +1,7 @@
+import { InterseptorService } from './interseptor.service';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 
 import { AppComponent } from './app.component';
@@ -39,7 +40,14 @@ const routes = [
     HttpClientModule,
     RouterModule.forRoot(routes)
   ],
-  providers: [CalendarService, ControllerCalendarService, LoadingService],
+  providers: [CalendarService, 
+    ControllerCalendarService, 
+    LoadingService,
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: InterseptorService,
+      multi: true
+    }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

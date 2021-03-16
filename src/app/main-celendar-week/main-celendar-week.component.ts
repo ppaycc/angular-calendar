@@ -64,7 +64,7 @@ export class MainCelendarWeekComponent implements OnInit {
     }
     this.clendar.getEventsBetweenDates({from, to}).subscribe(d => {
       this.convertEvents(d.items);
-      this.loading.removeFetch();
+      // this.loading.removeFetch();
     });
   }
   convertEvents(events): void{

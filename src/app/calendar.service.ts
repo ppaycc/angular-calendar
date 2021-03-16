@@ -20,28 +20,21 @@ export class CalendarService {
 
   addEvent(event): void{
     console.log('Add new event', event);
-    this.loading.addFetch();
     this.http.post('http://localhost:8008/api/calendar-event/create', event).subscribe(() => {
-      this.loading.removeFetch();
     });
   }
 
   deleteEvent(id): void {
-    this.loading.addFetch();
     this.http.get('http://localhost:8008/api/calendar-event/delete/' + id).subscribe(() => {
-      this.loading.removeFetch();
     });
   }
 
   editEvent(editedEvent): void{
-    this.loading.addFetch();
     this.http.post('http://localhost:8008/api/calendar-event/update', editedEvent).subscribe(() => {
-      this.loading.removeFetch();
     });
   }
 
   getEventsBetweenDates({from, to}): any{
-    this.loading.addFetch();
     const body = {
       $and: [
         {date: {
